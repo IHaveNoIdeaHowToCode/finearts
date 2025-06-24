@@ -1,5 +1,9 @@
 <script setup>
+import { AppState } from '@/AppState.js';
 import { Artwork } from '@/models/Artwork.js';
+
+
+const artwork = AppState.artwork
 
 defineProps({
   artProp: { type: Artwork, required: true }
@@ -8,7 +12,9 @@ defineProps({
 
 
 <template>
-  <img src="artProp." alt="">
+  <div>
+    {{ artwork }}
+  </div>
 </template>
 
 
