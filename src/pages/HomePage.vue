@@ -1,5 +1,6 @@
 <script setup>
 import { AppState } from '@/AppState.js';
+import ArtworkCard from '@/components/ArtworkCard.vue';
 import { artworkService } from '@/services/ArtworkService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
@@ -35,11 +36,15 @@ async function getArtwork() {
   <h1>THIS IS SOME MIGHTY FINE ARTWORK ERE</h1>
   <section class="container">
     <div class="row">
-      <div v-for="artwork in artworks" :key="artwork.id" class="col-3">
-        {{ artworks }}
+      <div class="artwork">
+        <ArtworkCard v-for="art in artworks" :key="art.id" :artwork="art" />
       </div>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss"></style>
+
+<!-- <div v-for="artwork in artworks" :key="artwork.id" class="col-3">
+  {{ artworks }}
+</div> -->
